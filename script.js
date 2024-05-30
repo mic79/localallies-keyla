@@ -44,7 +44,7 @@ vcardLink.addEventListener("click", function () {
     photo: "https://keyla.localallies.com/keyla.jpg"
   };
   // create a vcard file
-  var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nURL:" + contact.website + "\nEMAIL:" + contact.email + "\nORG:" contact.company + "\nPHOTO;MEDIATYPE=image/jpeg:" + "\nEND:VCARD";
+  var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nURL:" + contact.website + "\nEMAIL:" + contact.email + "\nORG:" + contact.company + "\nPHOTO;MEDIATYPE=image/jpeg:" + "\nEND:VCARD";
   var blob = new Blob([vcard], { type: "text/vcard" });
   var url = URL.createObjectURL(blob);
   
