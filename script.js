@@ -42,7 +42,7 @@ vcardLink.addEventListener("click", function () {
     email: "keyla@localallies.com"
   };
   // create a vcard file
-  var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nURL;TYPE=work:" + contact.website + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+  var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nURL:" + contact.website + "\nEMAIL:" + contact.email + "\nEND:VCARD";
   var blob = new Blob([vcard], { type: "text/vcard" });
   var url = URL.createObjectURL(blob);
   
