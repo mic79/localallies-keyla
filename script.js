@@ -31,3 +31,26 @@ $('.photo').on('click', function() {
   $(this).toggleClass('selected');
 });
 // END QR
+
+// VCARD
+var vcardLink = document.getElementById("vcard-link");
+vcardLink.addEventListener("click", function () {
+  // Get the contact information from the website
+  var contact = {
+    name: "Keyla Nogueira",
+    website: "https://localallies.com/",
+    email: "keyla@localallies.com"
+  };
+  // create a vcard file
+  var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nURL;TYPE=work:" + contact.website + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+  var blob = new Blob([vcard], { type: "text/vcard" });
+  var url = URL.createObjectURL(blob);
+  
+  const newLink = document.createElement('a');
+  newLink.download = contact.name + ".vcf";
+  newLink.textContent = contact.name;
+  newLink.href = url;
+  
+  newLink.click();
+});
+// END VCARD
