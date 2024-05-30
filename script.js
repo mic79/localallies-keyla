@@ -39,10 +39,12 @@ vcardLink.addEventListener("click", function () {
   var contact = {
     name: "Keyla Nogueira",
     website: "https://localallies.com/",
-    email: "keyla@localallies.com"
+    email: "keyla@localallies.com",
+    company: "Local Allies;International Business Development",
+    photo: "https://keyla.localallies.com/keyla.jpg"
   };
   // create a vcard file
-  var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nURL:" + contact.website + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+  var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nURL:" + contact.website + "\nEMAIL:" + contact.email + "\nORG:" contact.company + "\nPHOTO;MEDIATYPE=image/jpeg:" + "\nEND:VCARD";
   var blob = new Blob([vcard], { type: "text/vcard" });
   var url = URL.createObjectURL(blob);
   
